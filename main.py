@@ -59,3 +59,16 @@ plt.title("Petal length vs width per specie")
 plt.tight_layout()
 plt.show()
 
+
+
+sns.pairplot(df, hue="species", corner=True)
+plt.suptitle("Pairplot del dataset Iris", y=1.02)
+plt.show()
+
+#Mostra quanto ogni feature è correlata con le altre
+
+corr = df.drop(columns="species").corr()
+sns.heatmap(corr, annot=True, cmap="coolwarm")
+plt.title("Matrice di correlazione delle feature")
+plt.tight_layout()
+plt.show()
